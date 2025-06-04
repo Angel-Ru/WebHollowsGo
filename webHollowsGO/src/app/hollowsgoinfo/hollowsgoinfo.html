@@ -5,25 +5,11 @@
     <div class="text-content">
       <h1>NOVETATS</h1>
 
-      <p>
-        <strong>Versió 1.0 de HollowsGO:Remastered ja disponible!</strong>
-      </p>
-
-      <p>
-        Actualització ambientada en l'arc més recent de l'Anime. El Thousand Year Blood War.
-      </p>
-
-      <p>
-        Hi ha nous personatges amb les seves respectives skins. S'han afegit un total de 33 personatges nous i un total de 74 skins noves, afegint-hi la raça dels Quincies que abans no estaba incluida en el joc i fent jugables als propis Hollows i a Quincies que son els enemics amb els que et enfrontaràs.
-      </p>
-      <p>
-        La botiga d'Urahara ha patit un canvi misteriós i intrigant… Ara, les portes del destí es poden obrir amb tirades de 5 en 5, mentre noves i enigmàtiques Banners (Shinigamis, Quincies, Hollows) s'han revelat a les ombres. Les Teves monedes poden ser reforçades amb diners reals, intensificant l'aura d’aquest nou ritual. I atenció: un nou mecanisme ha emergit entre les ombres – quan els esperits repetits es manifestin, fragments secrets seran teus, fragments amb un poder únic… Et permetran, cada dia, reclamar un personatge desconegut que encara no hagi respost a la teva crida. Qui sap quines forces amagades t’esperen?
-      </p>
-      <p>
-        Els combats ara ressonen amb una intensitat mai vista!
-        S’han afegit les misterioses Habilitats Llegendàries: només uns pocs personatges privilegiats poden dominar-les… podràs desbloquejar-ne tot el seu potencial?
-        A més, els enemics canvien amb el temps, portant noves amenaces a cada enfrontament.
-      </p>
+      <p><strong>Versió 1.0 de HollowsGO:Remastered ja disponible!</strong></p>
+      <p>Actualització ambientada en l'arc més recent de l'Anime. El Thousand Year Blood War.</p>
+      <p>Hi ha nous personatges amb les seves respectives skins. S'han afegit un total de 33 personatges nous i un total de 74 skins noves, afegint-hi la raça dels Quincies que abans no estaba incluida en el joc i fent jugables als propis Hollows i a Quincies que son els enemics amb els que et enfrontaràs.</p>
+      <p>La botiga d'Urahara ha patit un canvi misteriós i intrigant… Ara, les portes del destí es poden obrir amb tirades de 5 en 5, mentre noves i enigmàtiques Banners (Shinigamis, Quincies, Hollows) s'han revelat a les ombres. Les Teves monedes poden ser reforçades amb diners reals, intensificant l'aura d’aquest nou ritual. I atenció: un nou mecanisme ha emergit entre les ombres – quan els esperits repetits es manifestin, fragments secrets seran teus, fragments amb un poder únic… Et permetran, cada dia, reclamar un personatge desconegut que encara no hagi respost a la teva crida. Qui sap quines forces amagades t’esperen?</p>
+      <p>Els combats ara ressonen amb una intensitat mai vista! S’han afegit les misterioses Habilitats Llegendàries: només uns pocs personatges privilegiats poden dominar-les… podràs desbloquejar-ne tot el seu potencial? A més, els enemics canvien amb el temps, portant noves amenaces a cada enfrontament.</p>
     </div>
     <div class="image-content">
       <img
@@ -34,32 +20,31 @@
     </div>
   </div>
 
+  <!-- Secció vídeo 1 (URL fixa) -->
   <div class="section section-video carousel-section">
-    <!-- Columna esquerra: Text justificat i centrat verticalment -->
+    <!-- Text -->
     <div class="carousel-text">
       <h2>Descobreix HollowsGo</h2>
-      <p>
-        Descobreix els secrets ocults de HollowsGo: Remastered. Deixa’t captivar per aquest enigmàtic carrusel que revela les misterioses pantalles d’inici que et donen la benvinguda quan obres l’aplicació. Escolta com la música de fons, tan aviat entres o surts, se silencia com un murmura, com si una presència amagada vetllés pel teu confort.
-      </p>
+      <p>Descobreix els secrets ocults de HollowsGo: Remastered. Deixa’t captivar per aquest enigmàtic carrusel que revela les misterioses pantalles d’inici que et donen la benvinguda quan obres l’aplicació. Escolta com la música de fons, tan aviat entres o surts, se silencia com un murmura, com si una presència amagada vetllés pel teu confort.</p>
     </div>
 
-    <!-- Columna central: Carrusel -->
+    <!-- Carrusel -->
     <div class="carousel-wrapper">
       <div class="carousel-container">
-        <div class="carousel-slide" [style.transform]="getTransform()">
+        <div class="carousel-slide" [style.transform]="getTransform(0)">
           <div class="slide-item" *ngFor="let img of images">
             <img [src]="img" alt="Imatge del carrusel" />
           </div>
         </div>
-        <div class="carousel-arrow left" (click)="prevSlide()">←</div>
-        <div class="carousel-arrow right" (click)="nextSlide()">→</div>
+        <div class="carousel-arrow left" (click)="prevSlide(0, images.length)">←</div>
+        <div class="carousel-arrow right" (click)="nextSlide(0, images.length)">→</div>
       </div>
     </div>
 
-    <!-- Columna dreta: Vídeo amb controls personalitzats -->
+    <!-- Vídeo 1 -->
     <div class="video-wrapper">
       <div class="video-container">
-        <video #videoPlayer
+        <video #videoPlayer0
                src="https://res.cloudinary.com/dkcgsfcky/video/upload/f_auto:video,q_auto/v1/WEB/Fotos_HollowsGo/av19ph39hu2ve9hl51kp"
                muted loop (timeupdate)="updateProgress(0)">
         </video>
@@ -79,7 +64,7 @@
     </div>
   </div>
 
-  <!-- Tercera secció: Tite Kubo -->
+  <!-- Secció Tite Kubo -->
   <div class="section section-tite-kubo">
     <div class="text-content">
       <h2>Inici</h2>
@@ -93,39 +78,34 @@
     </div>
   </div>
 
+  <!-- Secció vídeo 2 (array de URLs) -->
   <div class="section section-video carousel-section">
-    <!-- Columna esquerra: Text justificat i centrat verticalment -->
+    <!-- Text -->
     <div class="carousel-text">
       <h2>Tenda</h2>
-      <p>
-        Ei, escolta… aquí pots trobar de tot: Shinigamis, Quincy i fins i tot Hollows. I no parlo de qualsevol cosa, sinó dels més rars, els que tenen aquell toc especial que només es veu una vegada a la vida. Mira bé els personatges que surten destacats a cada banner, perquè aquests són els que valen de debò.
-      </p>
-      <p>
-        Ah, i quan tires un gacha, para atenció… alguns personatges tindran una animació diferent, una mica més especial. Una mena de signe que t’estan esperant, com si volguessin deixar clar que no són qualsevol cosa.
-      </p>
-      <p>
-        I si el destí et juga una mala passada i et toca un personatge repetit? No et preocupis, no és un fracàs. A canvi, obtindràs fragments de skins, com petites peces d’un trencaclosques que pots usar per comprar skins noves — només et costarà 100 monedes, res fora de l’habitual.
-      </p>
+      <p>Ei, escolta… aquí pots trobar de tot: Shinigamis, Quincy i fins i tot Hollows. I no parlo de qualsevol cosa, sinó dels més rars, els que tenen aquell toc especial que només es veu una vegada a la vida. Mira bé els personatges que surten destacats a cada banner, perquè aquests són els que valen de debò.</p>
+      <p>Ah, i quan tires un gacha, para atenció… alguns personatges tindran una animació diferent, una mica més especial. Una mena de signe que t’estan esperant, com si volguessin deixar clar que no són qualsevol cosa.</p>
+      <p>I si el destí et juga una mala passada i et toca un personatge repetit? No et preocupis, no és un fracàs. A canvi, obtindràs fragments de skins, com petites peces d’un trencaclosques que pots usar per comprar skins noves — només et costarà 100 monedes, res fora de l’habitual.</p>
     </div>
 
-    <!-- Columna central: Carrusel -->
+    <!-- Carrusel -->
     <div class="carousel-wrapper">
       <div class="carousel-container">
-        <div class="carousel-slide" [style.transform]="getTransform()">
+        <div class="carousel-slide" [style.transform]="getTransform(1)">
           <div class="slide-item" *ngFor="let img of tenda">
             <img [src]="img" alt="Imatge del carrusel" />
           </div>
         </div>
-        <div class="carousel-arrow left" (click)="prevSlide()">←</div>
-        <div class="carousel-arrow right" (click)="nextSlide()">→</div>
+        <div class="carousel-arrow left" (click)="prevSlide(1, tenda.length)">←</div>
+        <div class="carousel-arrow right" (click)="nextSlide(1, tenda.length)">→</div>
       </div>
     </div>
 
-    <!-- Columna dreta: Vídeo amb controls personalitzats -->
+    <!-- Vídeo 2 -->
     <div class="video-wrapper">
       <div class="video-container">
-        <video #videoPlayer
-               src="https://res.cloudinary.com/dkcgsfcky/video/upload/f_auto:video,q_auto/v1/WEB/Fotos_HollowsGo/mppb2hxqmhi9a854crwd"
+        <video #videoPlayer1
+               [src]="videoUrls[activeVideoIndex]"
                muted loop (timeupdate)="updateProgress(1)">
         </video>
 
@@ -140,6 +120,30 @@
         <div class="progress-bar-container" (click)="seekVideo($event, 1)">
           <div class="progress-bar" [style.width.%]="videoStates[1].progress"></div>
         </div>
+
+        <div class="video-switch-toggle">
+          <label class="switch">
+            <input type="checkbox"
+                   [checked]="activeVideoIndex === 1"
+                   (change)="onToggleVideo($event)" />
+            <span class="slider"></span>
+          </label>
+        </div>
+
+
+      </div>
+    </div>
+
+    <!-- Carrusel adicional -->
+    <div class="carousel-wrapper">
+      <div class="carousel-container">
+        <div class="carousel-slide" [style.transform]="getTransform(2)">
+          <div class="slide-item" *ngFor="let img of frags">
+            <img [src]="img" alt="Imatge del carrusel" />
+          </div>
+        </div>
+        <div class="carousel-arrow left" (click)="prevSlide(2, frags.length)">←</div>
+        <div class="carousel-arrow right" (click)="nextSlide(2, frags.length)">→</div>
       </div>
     </div>
   </div>
