@@ -13,8 +13,8 @@
     </div>
     <div class="image-content">
       <img
-        src="https://res.cloudinary.com/dkcgsfcky/image/upload/f_auto,q_auto/v1/WEB/kg31osktz8hwzti66t09"
-        alt="Ichigo Kurosaki"
+        src="https://raw.githubusercontent.com/MiquelSanso/Imatges-HollowsGO/refs/heads/main/Web/HollowsGo/banner_novetats.webp"
+        alt="Banner-Novetats"
         class="styled-image"
       >
     </div>
@@ -45,9 +45,12 @@
     <div class="video-wrapper">
       <div class="video-container">
         <video #videoPlayer0
-               src="https://res.cloudinary.com/dkcgsfcky/video/upload/f_auto:video,q_auto/v1/WEB/Fotos_HollowsGo/av19ph39hu2ve9hl51kp"
-               muted loop (timeupdate)="updateProgress(0)">
-        </video>
+       [src]="videoUrl0"
+       muted
+       loop
+       (timeupdate)="updateProgress(0)">
+</video>
+
 
         <button class="video-btn play-pause" (click)="togglePlay(0)">
           {{ videoStates[0].isPlaying ? '⏸️' : '▶️' }}
@@ -68,13 +71,14 @@
   <div class="section section-tite-kubo">
     <div class="text-content">
       <h2>Inici</h2>
-      <p><strong>Tite Kubo</strong>, el seu nom real és Noriaki Kubo, va néixer el 26 de juny de 1977...</p>
-      <p>Bleach es va convertir en una de les sèries més populars...</p>
-      <p>A més de Bleach, Kubo ha creat altres obres...</p>
-      <p>Amb el temps, Tite Kubo ha deixat empremta...</p>
+      <p>Aquí es pot veure la pàgina d'inici de HollowsGo Remastered</p>
+      <p>El primer que podra trobar l'usuari es la barra superior on l'usuari podrà trobar el seu nombre de monedes i vials de recuperació, a més del seu avatar i nom d'usuari</p>
+      <p>A continuació, l'usuari devora l'avatar trobarà un icona de tres barretes que podrà pressionar per a poder veure les missions disponibles, tant les diàries, com les de titols o armes(per veure aquestes cal tenir seleccionat un personatge)</p>
+      <p>Just abaix, en cas de tenir un personatge seleccionat, a l'usuari li apareixerà una targeta amb aquella skin(personatge) seleccionada i si pressiona la targeta es tornarà més grosa i podrà veure més detalls sobre el personatge.</p>
+      <p>Finalment, al centre de la pantalla es trobarà una targeta amb les novetats més recents del joc, la qual si la pressiona mostrarà més informació i a a part de abaix de la pantalla es podrà veure la barra de navegació per navegar a la resta de pantalles.</p>
     </div>
     <div class="image-content">
-      <img src="https://res.cloudinary.com/dkcgsfcky/image/upload/f_auto,q_auto/v1/WEB/dl1ca2y0az0xupuquhja" alt="Tite Kubo" class="styled-image" />
+      <img src="https://github.com/MiquelSanso/Imatges-HollowsGO/blob/main/Web/Screenshot_2025-06-06-19-19-09-246_com.example.hollows_go.jpg?raw=true" alt="Tite Kubo" class="styled-image" />
     </div>
   </div>
 

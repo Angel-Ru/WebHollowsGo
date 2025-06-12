@@ -16,17 +16,17 @@ import { NgForOf } from '@angular/common';
   templateUrl: './hollowsgoinfo.html',
   styleUrls: ['./hollowsgoinfo.css'],
 })
-export class Hollowsgoinfo implements OnInit, OnDestroy {
+export class Hollowsgoinfo {
   images: string[] = [
-    'https://res.cloudinary.com/dkcgsfcky/image/upload/f_auto,q_auto/v1/WEB/Fotos_HollowsGo/u3rayqj3ozb0tmkucf0p',
-    'https://res.cloudinary.com/dkcgsfcky/image/upload/f_auto,q_auto/v1/WEB/Fotos_HollowsGo/azevfdojdy9gwtwsvjpg',
-    'https://res.cloudinary.com/dkcgsfcky/image/upload/f_auto,q_auto/v1/WEB/Fotos_HollowsGo/i22hxtu0hrlqpvwnpvus',
+    'https://raw.githubusercontent.com/MiquelSanso/Imatges-HollowsGO/refs/heads/main/Web/PreHomescreen/u3rayqj3ozb0tmkucf0p.webp',
+    'https://github.com/MiquelSanso/Imatges-HollowsGO/blob/main/Web/HollowsGo/Screenshot_2025-06-12-19-26-05-962_com.example.hollows_go.jpg?raw=true',
+    'https://github.com/MiquelSanso/Imatges-HollowsGO/blob/main/Web/HollowsGo/Screenshot_2025-06-12-19-26-38-631_com.example.hollows_go.jpg?raw=true',
   ];
 
   tenda: string[] = [
-    'https://res.cloudinary.com/dkcgsfcky/image/upload/f_auto,q_auto/v1/WEB/Fotos_HollowsGo/gz60njhmwp3ultysdic5',
-    'https://res.cloudinary.com/dkcgsfcky/image/upload/f_auto,q_auto/v1/WEB/Fotos_HollowsGo/s2cuqbfigljiu45ajpl5',
-    'https://res.cloudinary.com/dkcgsfcky/image/upload/f_auto,q_auto/v1/WEB/Fotos_HollowsGo/vtpb8pbzq9twlhu7t0t9',
+    'https://github.com/MiquelSanso/Imatges-HollowsGO/blob/main/Web/Tenda/Screenshot_2025-06-12-20-02-18-458_com.example.hollows_go.jpg?raw=true',
+    'https://github.com/MiquelSanso/Imatges-HollowsGO/blob/main/Web/Tenda/Screenshot_2025-06-12-20-02-25-338_com.example.hollows_go.jpg?raw=true',
+    'https://github.com/MiquelSanso/Imatges-HollowsGO/blob/main/Web/Tenda/Screenshot_2025-06-12-20-02-50-914_com.example.hollows_go.jpg?raw=true',
   ];
 
   frags: string[] = [
@@ -38,7 +38,8 @@ export class Hollowsgoinfo implements OnInit, OnDestroy {
   indices: number[] = [0, 0, 0]; // Carrusels
 
   // Vídeo 0: URL fixa
-  videoUrl0: string = 'https://res.cloudinary.com/dkcgsfcky/video/upload/f_auto:video,q_auto/v1/WEB/Fotos_HollowsGo/fixed_video.mp4';
+  videoUrl0: string = 'assets/videos/prehomescreen.mp4';
+;
 
   // Vídeo 1: array de vídeos
   videoUrls: string[] = [
@@ -57,10 +58,7 @@ export class Hollowsgoinfo implements OnInit, OnDestroy {
     { isPlaying: false, isMuted: true, progress: 0 }, // vídeo1
   ];
 
-  ngOnInit(): void {
-    this.updateBackground();
-    window.addEventListener('resize', this.updateBackground.bind(this));
-  }
+ 
 
   ngAfterViewInit(): void {
     // Inicialitzar mute a true i carregar vídeo1
@@ -74,11 +72,7 @@ export class Hollowsgoinfo implements OnInit, OnDestroy {
     }
   }
 
-  ngOnDestroy(): void {
-    document.body.style.backgroundImage = '';
-    document.body.style.backgroundColor = '';
-    window.removeEventListener('resize', this.updateBackground.bind(this));
-  }
+ 
 
   prevSlide(carouselId: number, length: number): void {
     this.indices[carouselId] = (this.indices[carouselId] - 1 + length) % length;
@@ -173,18 +167,9 @@ export class Hollowsgoinfo implements OnInit, OnDestroy {
     const checked = (event.target as HTMLInputElement).checked;
     this.changeVideo(checked ? 1 : 0);
   }
-  private updateBackground(): void {
-    const isLandscape = window.matchMedia('(orientation: landscape)').matches;
-    const imageUrl = isLandscape
-      ? 'https://res.cloudinary.com/dkcgsfcky/image/upload/f_auto,q_auto/v1/WEB/kdopgq4rlbanmrurspow'
-      : 'https://res.cloudinary.com/dkcgsfcky/image/upload/f_auto,q_auto/v1/WEB/e3wettuzovqwdicdhpmg';
 
-    document.body.style.backgroundImage = `url('${imageUrl}')`;
-    document.body.style.backgroundSize = 'cover';
-    document.body.style.backgroundRepeat = 'no-repeat';
-    document.body.style.backgroundPosition = 'center';
-    document.body.style.backgroundColor = '#1b0c04';
-  }
+
+
 
   protected readonly HTMLElement = HTMLElement;
   protected readonly HTMLInputElement = HTMLInputElement;

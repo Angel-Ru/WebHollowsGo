@@ -11,14 +11,13 @@
   scroll-snap-align: start;
   margin-bottom: env(safe-area-inset-bottom, 0px);
   overflow: hidden;
-
 }
 
 .section-video {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #000;
+  background: rgba(0, 0, 0, 0.9);
   position: relative;
   overflow: hidden;
   height: 90vh;
@@ -53,29 +52,11 @@
   justify-content: flex-end;
 }
 
-/* Responsiu per mòbil */
-@media (max-width: 768px) {
-  .carousel-section {
-    flex-direction: column-reverse;
-    text-align: center;
-  }
-
-  .carousel-text {
-    max-width: 100%;
-    align-items: center;
-    text-align: justify;
-  }
-
-  .carousel-wrapper {
-    justify-content: center;
-  }
-}
-
 /* Contenedor principal del carrusel */
 .carousel-container {
   width: 100%;
   max-width: 200px;
-  aspect-ratio: 9 / 16; /* Proporción vertical estilo móvil */
+  aspect-ratio: 9 / 16;
   border-radius: 12px;
   overflow: hidden;
   position: relative;
@@ -160,20 +141,6 @@
   border-radius: 12px;
 }
 
-/* Responsiu: mostrar vídeo a sota del carrusel */
-@media (max-width: 1024px) {
-  .carousel-section {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .carousel-text,
-  .carousel-wrapper,
-  .video-wrapper {
-    max-width: 90%;
-  }
-}
-
 /* Controls personalitzats dins del vídeo */
 .video-container {
   position: relative;
@@ -211,7 +178,7 @@
 .video-switch-toggle {
   position: absolute;
   top: 10px;
-  right: 10px; /* Cambiamos left: 50% y transform para right: 10px */
+  right: 10px;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -220,14 +187,13 @@
   font-size: 14px;
   color: white;
   user-select: none;
-  background: none; /* Sin fondo */
+  background: none;
   padding: 4px 10px;
   border-radius: 12px;
   cursor: pointer;
-  width: auto; /* Ajustamos para que se adapte al contenido */
+  width: auto;
   justify-content: center;
 }
-
 
 /* Switch base */
 .switch {
@@ -276,8 +242,6 @@
 .switch input:checked + .slider::before {
   transform: translateX(18px);
 }
-
-
 
 .video-container video {
   width: 100%;
@@ -395,4 +359,98 @@
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(232, 139, 57, 0.3);
   object-fit: contain;
+}
+
+/* Responsiu per mòbil */
+
+@media (max-width: 1024px) {
+  .carousel-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .carousel-text,
+  .carousel-wrapper,
+  .video-wrapper {
+    max-width: 90%;
+  }
+
+  .video-wrapper {
+    width: 100% !important;
+    max-width: none !important;
+    aspect-ratio: auto !important;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-section {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .carousel-text {
+    max-width: 100%;
+    align-items: center;
+    text-align: justify;
+  }
+
+  .carousel-wrapper {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .carousel-container {
+    max-width: 100%;
+    aspect-ratio: 16 / 9; /* més ample per a pantalles petites */
+  }
+
+  .slide-item img {
+    width: 100%;
+    height: auto;
+  }
+
+  .video-wrapper {
+    width: 100% !important;
+    max-width: none !important;
+    aspect-ratio: 16 / 9 !important;
+    margin-top: 20px;
+  }
+
+  .section-bleach,
+  .section-tite-kubo {
+    flex-direction: column;
+    padding: 20px;
+    height: auto;
+    text-align: center;
+  }
+
+  .section-bleach .text-content,
+  .section-tite-kubo .text-content {
+    max-width: 100%;
+    flex: none;
+    margin-bottom: 20px;
+  }
+
+  .section-bleach .image-content,
+  .section-tite-kubo .image-content {
+    max-width: 100%;
+    flex: none;
+  }
+
+  .section-bleach .image-content img.styled-image,
+  .section-tite-kubo .image-content img.styled-image {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .section-images {
+    padding: 20px;
+    height: auto;
+  }
+
+  .section-images img {
+    max-width: 100%;
+    height: auto;
+  }
 }

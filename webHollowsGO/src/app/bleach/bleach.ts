@@ -6,6 +6,8 @@ import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
   styleUrls: ['./bleach.css']
 })
 export class BleachInfoComponent implements AfterViewInit {
+
+  
   @ViewChild('bleachVideo') bleachVideo!: ElementRef<HTMLVideoElement>;
 
   ngAfterViewInit(): void {
@@ -44,4 +46,5 @@ export class BleachInfoComponent implements AfterViewInit {
 
     observer.observe(video);
   }
+  
 }

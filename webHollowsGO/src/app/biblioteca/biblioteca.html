@@ -1,0 +1,64 @@
+<div class="container">
+  <!-- Card de Login -->
+  <div *ngIf="estat === 'loggedOut'" class="card login-card">
+    <h2 class="card-title">Iniciar sesión</h2>
+    <form (submit)="login(); $event.preventDefault()" class="login-form">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input id="email" [(ngModel)]="email" name="email" required autocomplete="username" />
+      </div>
+
+      <div class="form-group">
+        <label for="contrassenya">Contraseña</label>
+        <input id="contrassenya" type="password" [(ngModel)]="contrassenya" name="contrassenya" required autocomplete="current-password" />
+      </div>
+
+      <button type="submit" class="btn-submit">Entrar</button>
+    </form>
+    <p class="mensaje">{{ mensaje }}</p>
+  </div>
+
+  <!-- Missatge mentre carrega -->
+  <div *ngIf="estat === 'loading'" class="loading-message">
+    <p>Carregant...</p>
+  </div>
+
+  <!-- Biblioteca de Personajes -->
+  <div *ngIf="estat === 'loaded' && personatges.length > 0" class="biblioteca">
+    <div class="personatge-card">
+      <h2 class="title">Descobreix la teva col·lecció de personatges</h2>
+      <div class="personatge-header">
+        <div class="personatge-name">{{ personatges[currentIndex].personatge.nom }}</div>
+        <div class="stats">
+          Vida base: {{ personatges[currentIndex].personatge.vida_base }} |
+          Mal base: {{ personatges[currentIndex].personatge.mal_base }}
+        </div>
+      </div>
+
+      <!-- Flechas de navegación dentro de la tarjeta -->
+      <div class="navegacion-personatge">
+        <button (click)="prevPersonatge()" [disabled]="currentIndex === 0" class="nav-btn">&#8592;</button>
+
+        <div class="skins-container">
+          <div *ngFor="let skin of personatges[currentIndex].skins" class="skin-card" tabindex="0">
+            <img [src]="skin.imatge" alt="{{ skin.nom }}" class="skin-image" />
+            <h4 class="title">{{ skin.nom }}</h4>
+            <p>Categoria: {{ skin.categoria }}</p>
+            <p>Raça: {{ skin.raca }}</p>
+            <p>Mal total: {{ skin.mal_total }}</p>
+            <p>Vida: {{ skin.vida }} / {{ skin.vida_maxima }}</p>
+            <p *ngIf="skin.arma.nom">Arma: {{ skin.arma.nom }} (buff: {{ skin.arma.buff_atac }})</p>
+            <p *ngIf="skin.atac_nom">Atac: {{ skin.atac_nom }}</p>
+          </div>
+        </div>
+
+        <button (click)="nextPersonatge()" [disabled]="currentIndex === personatges.length - 1" class="nav-btn">&#8594;</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Missatge si no hi ha personatges -->
+  <div *ngIf="estat === 'loaded' && personatges.length === 0" class="no-personatges-message">
+    <p>No tens personatges a la biblioteca.</p>
+  </div>
+</div>

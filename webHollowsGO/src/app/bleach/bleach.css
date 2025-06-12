@@ -13,12 +13,11 @@
 }
 
 
-
 .section-video {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #000; /* fons negre */
+  background: rgba(0, 0, 0, 0.9); /* negre amb 90% d'opacitat */
 }
 
 .bleach-video {

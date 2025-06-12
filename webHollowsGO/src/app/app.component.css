@@ -18,10 +18,19 @@
 }
 
 /* Contenidor pels enllaços de navegació */
+/* Habilitar el desplaçament horitzontal a mòbil */
 .nav-links {
   display: flex;
-  gap: 20px; /* Espai entre els enllaços */
+  gap: 20px;
+  overflow-x: auto; /* Permet scroll lateral */
+  -webkit-overflow-scrolling: touch; /* Suavitat a mòbil */
+  white-space: nowrap; /* Els enllaços no salten de línia */
 }
+
+.nav-links::-webkit-scrollbar {
+  display: none; /* Amaga la barra de scroll per a un look net */
+}
+
 
 /* Logo-text amb estil minimalista càlid */
 .logo-text {
@@ -95,4 +104,13 @@
   background: rgba(40, 40, 40, 0.85);
   transform: scale(1.05);
   box-shadow: 0 0 8px rgba(209, 126, 44, 0.2); /* ombra taronja molt suau */
+}
+.logo-img {
+  height: 150px;
+}
+
+@media (max-width: 768px) {
+  .logo-img {
+    height: 100px; /* Ajusta a la mida desitjada */
+  }
 }
