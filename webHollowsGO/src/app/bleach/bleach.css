@@ -123,3 +123,98 @@
   box-shadow: 0 4px 8px rgba(232, 139, 57, 0.3);
   object-fit: contain;
 }
+/* Contenidor principal */
+.section-characters {
+  padding: 2rem;
+  background: transparent;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+
+.section-characters h2 {
+  font-size: 2.5rem;
+  color: #ffae42;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
+  margin-bottom: 2rem;
+  font-family: 'Harukaze', sans-serif;
+  letter-spacing: 4px;
+}
+
+.character-selector {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(140px, 1fr));
+  gap: 1.5rem;
+  justify-content: center;
+  max-width: 850px; /* opcional per limitar l’amplada */
+  margin: 0 auto;
+}
+
+/* Targetes individuals */
+.character-card {
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-radius: 1rem;
+  padding: 1rem;
+  width: 160px;
+  backdrop-filter: blur(6px);
+  transition: transform 0.3s, border 0.3s;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #eee;
+  font-weight: 500;
+}
+
+.character-card:hover {
+  transform: translateY(-5px);
+  border: 2px solid #ff6600;
+}
+
+.character-card.selected {
+  border: 3px solid #ff6600;
+}
+
+/* NOVETAT: wrapper fix per imatges */
+.image-wrapper {
+  width: 120px;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+/* Imatge adaptada i centrada */
+.character-card img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Nom del personatge */
+.character-card span {
+  color: #f5f5f5;
+  text-align: center;
+}
+
+/* Informació del personatge seleccionat */
+.character-info-card {
+  margin: 2rem auto 0;
+  background: rgba(0, 0, 0, 0.7);
+  color: #f5f5f5;
+  border-radius: 1rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  max-width: 600px;
+  text-align: left;
+  backdrop-filter: blur(4px);
+}
+
+.character-info-card h3 {
+  color: #ffae42;
+  margin-bottom: 1rem;
+}
+

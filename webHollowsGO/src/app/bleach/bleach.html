@@ -69,5 +69,25 @@
       >
     </div>
   </div>
+<div class="section section-characters">
+  <h2>Personatges principals de Bleach</h2>
+
+  <div class="character-selector">
+    <div
+      class="character-card"
+      *ngFor="let character of characters"
+      [class.selected]="character.id === selectedCharacterId"
+      (click)="showCharacterInfo(character.id)"
+    >
+      <div class="image-wrapper">
+        <img [src]="character.image" [alt]="character.name" />
+      </div>
+      <span>{{ character.name }}</span>
+    </div>
+  </div>
+
+  <div class="character-info-card" *ngIf="selectedCharacterInfo" [innerHTML]="selectedCharacterInfo">
+  </div>
+</div>
 
 </div>

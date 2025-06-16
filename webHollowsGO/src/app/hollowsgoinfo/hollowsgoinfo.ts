@@ -30,9 +30,9 @@ export class Hollowsgoinfo {
   ];
 
   frags: string[] = [
-    'https://res.cloudinary.com/dkcgsfcky/image/upload/f_auto,q_auto/v1/WEB/Fotos_HollowsGo/FragmentsSkins/z7oa9e6plvjqrxa76h7g',
-    'https://res.cloudinary.com/dkcgsfcky/image/upload/f_auto,q_auto/v1/WEB/Fotos_HollowsGo/FragmentsSkins/orxvunxfch1ys63c6mog',
-    'https://res.cloudinary.com/dkcgsfcky/image/upload/f_auto,q_auto/v1/WEB/Fotos_HollowsGo/FragmentsSkins/ew9kncpd6lkdcnkzvkus',
+    'https://github.com/MiquelSanso/Imatges-HollowsGO/blob/main/Web/Tenda/Screenshot_2025-06-15-13-45-55-726_com.example.hollows_go.jpg?raw=true',
+    'https://github.com/MiquelSanso/Imatges-HollowsGO/blob/main/Web/Tenda/Screenshot_2025-06-15-13-46-12-117_com.example.hollows_go.jpg?raw=true',
+    'https://github.com/MiquelSanso/Imatges-HollowsGO/blob/main/Web/Tenda/Screenshot_2025-06-15-13-46-41-167_com.example.hollows_go.jpg?raw=true',
   ];
 
   indices: number[] = [0, 0, 0]; // Carrusels
@@ -44,7 +44,7 @@ export class Hollowsgoinfo {
   // Vídeo 1: array de vídeos
   videoUrls: string[] = [
     'https://res.cloudinary.com/dkcgsfcky/video/upload/f_auto:video,q_auto/v1/WEB/Fotos_HollowsGo/mppb2hxqmhi9a854crwd',
-    'https://res.cloudinary.com/dkcgsfcky/video/upload/f_auto:video,q_auto/v1/WEB/Fotos_HollowsGo/wap0ftvycpukmh7wnnzg',
+    'assets/videos/tenda_hab.mp4',
   ];
   activeVideoIndex: number = 0;
 
